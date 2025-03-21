@@ -30,7 +30,7 @@ app.get("/cadastro", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-  res.send("vc esta na pagina home");
+  res.send("vc esta na pagina em home");
 });
 
 app.get("/login", (req, res) => {
