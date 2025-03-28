@@ -12,6 +12,10 @@ db.serialize(() => {
   );
 });
 
+app.use("/static", express.static(__dirname + "/static"));
+
+app.set("view engine", "ejs");
+
 const index =
   "<a href ='/sobre'>Sobre</a><a href ='/info'>info</a><a href ='/home'>home</a><a href ='/login'>login</a><a href ='/cadrastro'>cadastro</a>";
 const sobre = 'vc esta na pagina sobre"<br><a href="/">Voltar</a>';
@@ -21,8 +25,10 @@ const login = "<a href ='/login'>login</a>";
 
 const cadastro = "<a href ='/cadastro'>cadastro</a>";
 
+res.send("login ainda nao implementado.");
+app.post("/login", (rew, res) => {});
 app.get("/", (req, res) => {
-  res.send(index);
+  res.render("index");
 });
 
 app.get("/cadastro", (req, res) => {
@@ -34,7 +40,7 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.send("vc esta na pagina login");
+  res.render("login");
 });
 
 app.get("/sobre", (req, res) => {
