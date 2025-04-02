@@ -1,2 +1,4 @@
 node_modules
+build
 *.db
+BloqSQLite_tutorial_old
